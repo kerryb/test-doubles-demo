@@ -15,6 +15,10 @@ public class LapTimer {
 
 	public void lineCrossed() {
 		lapTime = clock.time() - lapTime;
+		updateDisplayIfFastestLap();
+	}
+
+	private void updateDisplayIfFastestLap() {
 		fastestLapDisplay.recordTime(lapTime);
 	}
 }
