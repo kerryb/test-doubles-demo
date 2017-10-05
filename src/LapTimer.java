@@ -12,6 +12,6 @@ public class LapTimer {
 	}
 
 	public void lineCrossed() {
-		this.lapTime = clock.time();
+		lapTime = clock.time() - lapTime;
 	}
 }
