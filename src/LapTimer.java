@@ -3,6 +3,7 @@ public class LapTimer {
 	private Clock clock;
 	private int lapTime;
 	private LapDisplay fastestLapDisplay;
+	private Integer fastestLapTime;
 
 	public LapTimer(Clock clock, LapDisplay fastestLapDisplay) {
 		this.clock = clock;
@@ -19,6 +20,9 @@ public class LapTimer {
 	}
 
 	private void updateDisplayIfFastestLap() {
-		fastestLapDisplay.recordTime(lapTime);
+		if (fastestLapTime == null || lapTime < fastestLapTime) {
+			fastestLapTime = lapTime;
+			fastestLapDisplay.recordTime(lapTime);
+		}
 	}
 }
