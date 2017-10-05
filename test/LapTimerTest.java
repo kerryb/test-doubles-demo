@@ -39,4 +39,14 @@ public class LapTimerTest {
 		lapTimer.lineCrossed();
 		fastestLapDisplay.assertRecordTimeWasCalledWith(122);
 	}
+
+	@Test
+	public void a_slower_lap_is_not_recorded_as_fastest() {
+		clock.freezeTime(123);
+		lapTimer.lineCrossed();
+		fastestLapDisplay.reset();
+		clock.freezeTime(247);
+		lapTimer.lineCrossed();
+		fastestLapDisplay.assertRecordTimeWasNotCalled();
+	}
 }

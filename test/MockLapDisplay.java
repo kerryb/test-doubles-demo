@@ -14,6 +14,12 @@ public class MockLapDisplay implements LapDisplay {
 		}
 	}
 
+	public void assertRecordTimeWasNotCalled() {
+		if (recordTimeWasCalled) {
+			throw new AssertionError("recordTime(" + recordedTime + ") was called unexpectedly");
+		}
+	}
+
 	public void assertRecordTimeWasCalledWith(int time) {
 		assertRecordTimeWasCalled();
 		if (recordedTime != time) {
