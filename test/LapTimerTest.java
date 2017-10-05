@@ -27,6 +27,6 @@ public class LapTimerTest {
 	public void first_lap_is_always_recorded_as_fastest_lap() {
 		clock.freezeTime(123);
 		lapTimer.lineCrossed();
-		assertTrue("Expected recordTime to have been called", fastestLapDisplay.recordTimeWasCalled());
+		fastestLapDisplay.assertRecordTimeWasCalled();
 	}
 }

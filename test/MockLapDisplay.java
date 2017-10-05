@@ -6,7 +6,9 @@ public class MockLapDisplay implements LapDisplay {
 		recordTimeWasCalled = true;
 	}
 
-	public boolean recordTimeWasCalled() {
-		return recordTimeWasCalled;
+	public void assertRecordTimeWasCalled() {
+		if (!recordTimeWasCalled) {
+			throw new AssertionError("recordTime was not called");
+		}
 	}
 }
