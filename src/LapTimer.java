@@ -2,9 +2,11 @@ public class LapTimer {
 
 	private Clock clock;
 	private int lapTime;
+	private LapDisplay fastestLapDisplay;
 
-	public LapTimer(Clock clock) {
+	public LapTimer(Clock clock, LapDisplay fastestLapDisplay) {
 		this.clock = clock;
+		this.fastestLapDisplay = fastestLapDisplay;
 	}
 
 	public Object lastLapTime() {
@@ -13,5 +15,6 @@ public class LapTimer {
 
 	public void lineCrossed() {
 		lapTime = clock.time() - lapTime;
+		fastestLapDisplay.recordTime(lapTime);
 	}
 }
