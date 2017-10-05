@@ -4,8 +4,10 @@ import org.junit.Test;
 
 public class LapTimerTest {
 
+	private LapTimer lapTimer;
+
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void first_lap_time_is_time_from_clock() {
+		assertEquals(123, lapTimer.lastLapTime());
 	}
 }
