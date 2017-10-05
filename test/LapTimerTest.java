@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class LapTimerTest {
-	private TestClock clock = new TestClock();
+	private StubClock clock = new StubClock();
 	private LapTimer lapTimer = new LapTimer(clock);
 
 	@Test

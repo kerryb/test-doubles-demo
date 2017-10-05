@@ -1,4 +1,4 @@
-public class TestClock implements Clock {
+public class StubClock implements Clock {
 
 	private int time;
 
