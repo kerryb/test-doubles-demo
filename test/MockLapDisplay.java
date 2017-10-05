@@ -20,4 +20,9 @@ public class MockLapDisplay implements LapDisplay {
 			throw new AssertionError("Expected recordTime(" + time + "), but was called with " + recordedTime);
 		}
 	}
+
+	public void reset() {
+		recordTimeWasCalled = false;
+		recordedTime = 0;
+	}
 }

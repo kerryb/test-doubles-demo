@@ -34,6 +34,7 @@ public class LapTimerTest {
 	public void a_new_fastest_lap_is_recorded() {
 		clock.freezeTime(123);
 		lapTimer.lineCrossed();
+		fastestLapDisplay.reset();
 		clock.freezeTime(245);
 		lapTimer.lineCrossed();
 		fastestLapDisplay.assertRecordTimeWasCalledWith(122);
