@@ -1,13 +1,12 @@
 public class StubClock implements Clock {
+  private int time;
 
-	private int time;
+  public void freezeTime(int time) {
+    this.time = time;
+  }
 
-	public void freezeTime(int time) {
-		this.time = time;
-	}
-
-	@Override
-	public int time() {
-		return time;
-	}
+  @Override
+  public int time() {
+    return time;
+  }
 }

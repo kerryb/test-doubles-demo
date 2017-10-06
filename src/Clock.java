@@ -1,4 +1,3 @@
 public interface Clock {
-
-	int time();
+  int time();
 }
